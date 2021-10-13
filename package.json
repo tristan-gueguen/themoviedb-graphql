@@ -1,0 +1,35 @@
+{
+  "name": "themoviedb-graphql",
+  "version": "1.0.0",
+  "description": "A Simple GraphQL wrapper for themoviedb API",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/index.js",
+    "start:dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tristan-gueguen/themoviedb-graphql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tristan-gueguen/themoviedb-graphql/issues"
+  },
+  "homepage": "https://github.com/tristan-gueguen/themoviedb-graphql#readme",
+  "dependencies": {
+    "apollo-datasource-rest": "^3.3.0",
+    "apollo-server": "^3.4.0",
+    "graphql": "^15.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.5",
+    "nodemon": "^2.0.13",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4"
+  }
+}
