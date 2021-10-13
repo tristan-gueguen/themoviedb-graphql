@@ -25,6 +25,27 @@ class MovieAPI extends RESTDataSource {
   getCreditsPerson(personId: string) {
     return this.get(`person/${personId}/movie_credits`);
   }
+
+  getPerson(personId: string) {
+    return this.get(`person/${personId}`);
+  }
+
+  async getActor(personId: string) {
+    const person = await this.getPerson(personId);
+
+    return {
+      ...person,
+      profession: "ACTOR",
+    };
+  }
+
+  async getDirector(personId: string) {
+    const person = await this.getPerson(personId);
+    return {
+      ...person,
+      profession: "DIRECTOR",
+    };
+  }
 }
 
 export { MovieAPI };
