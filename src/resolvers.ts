@@ -47,7 +47,7 @@ const resolvers = {
           .slice(0, first);
       }
     },
-    image: async (_, __, ___) => "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/108fiNM6poRieMg7RIqLJRxdAwG.jpg"
+    image: async ({ profile_path }, __, ___) => `https://www.themoviedb.org/t/p/w300${profile_path}`
   },
 };
 
