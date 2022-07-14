@@ -30,6 +30,7 @@ const resolvers = {
       }
       return tryYear;
     },
+    image: ({ poster_path }, __, ___) => `https://www.themoviedb.org/t/p/w300${poster_path}`
   },
   Person: {
     movies: async ({ id, profession }, { first }, { dataSources }) => {
@@ -45,6 +46,7 @@ const resolvers = {
           .slice(0, first);
       }
     },
+    image: async (_, __, ___) => "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/108fiNM6poRieMg7RIqLJRxdAwG.jpg"
   },
 };
 

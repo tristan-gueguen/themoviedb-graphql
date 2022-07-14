@@ -27,6 +27,7 @@ const typeDefs = gql`
     similar_movies: [Movie]
     actors(first: Int): [Person]
     directors: [Person]
+    image: String
   }
 
   enum Profession {
@@ -41,6 +42,8 @@ const typeDefs = gql`
     popularity: Float
     profession: Profession!
     movies(first: Int): [Movie]!
+    biography: String
+    image: String
   }
 `;
 
