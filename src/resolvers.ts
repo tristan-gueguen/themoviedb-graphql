@@ -43,6 +43,7 @@ const resolvers = {
       } else {
         return ret.cast
           .sort((a, b) => b.vote_average - a.vote_average)
+          .filter(m => m.vote_average >= 6.5)
           .slice(0, first);
       }
     },
