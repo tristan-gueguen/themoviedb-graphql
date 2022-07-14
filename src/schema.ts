@@ -28,6 +28,8 @@ const typeDefs = gql`
     actors(first: Int): [Person]
     directors: [Person]
     image: String
+    overview: String
+    popularity: Float
   }
 
   enum Profession {
