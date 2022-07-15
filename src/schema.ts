@@ -30,6 +30,7 @@ const typeDefs = gql`
     image: String
     overview: String
     popularity: Float
+    runtime: Int
   }
 
   enum Profession {
