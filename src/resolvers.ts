@@ -13,7 +13,6 @@ const resolvers = {
     actors: async ({ id }, { first }, { dataSources }) => {
       const credits = await dataSources.movieAPI.getCredits(id);
       return credits.cast
-        .sort((a, b) => b.popularity - a.popularity)
         .slice(0, first)
         .map((item) => dataSources.movieAPI.getActor(item.id));
     },
