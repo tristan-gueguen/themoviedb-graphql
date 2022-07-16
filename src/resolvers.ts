@@ -4,6 +4,8 @@ const resolvers = {
     actor: (_, { id }, { dataSources }) => dataSources.movieAPI.getActor(id),
     director: (_, { id }, { dataSources }) =>
       dataSources.movieAPI.getDirector(id),
+    searchMovie: (_, { query }, { dataSources }) =>
+      dataSources.movieAPI.searchMovie(query)
   },
   Movie: {
     similar_movies: async ({ id }, __, { dataSources }) => {
@@ -48,6 +50,9 @@ const resolvers = {
     },
     image: async ({ profile_path }, __, ___) => `https://www.themoviedb.org/t/p/w300${profile_path}`
   },
+  SearchMovieResult: {
+    image: ({ poster_path }, __, ___) => `https://www.themoviedb.org/t/p/w300${poster_path}`
+  }
 };
 
 export default resolvers;

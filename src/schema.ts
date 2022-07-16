@@ -5,6 +5,7 @@ const typeDefs = gql`
     movie(id: ID!): Movie
     actor(id: ID!): Person
     director(id: ID!): Person
+    searchMovie(query: String): SearchMoviePage
   }
 
   "A movie"
@@ -46,6 +47,23 @@ const typeDefs = gql`
     profession: Profession!
     movies(first: Int): [Movie]!
     biography: String
+    image: String
+  }
+
+  type SearchMoviePage {
+    page: Int
+    results: [SearchMovieResult]
+    total_pages: Int
+    total_results: Int
+  }
+
+  type SearchMovieResult {
+    id: ID!
+    poster_path: String
+    original_title: String
+    name: String
+    vote_average: Float!
+    release_year: Int
     image: String
   }
 `;

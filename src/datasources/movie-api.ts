@@ -46,6 +46,12 @@ class MovieAPI extends RESTDataSource {
       profession: "DIRECTOR",
     };
   }
+
+  searchMovie(query: string) {
+    return this.get(`search/movie/`, {
+      query
+    });
+  }
 }
 
 export { MovieAPI };
